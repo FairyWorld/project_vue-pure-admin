@@ -9,8 +9,12 @@ import { defineComponent } from "vue";
 import { ElConfigProvider } from "element-plus";
 import zhCn from "element-plus/lib/locale/lang/zh-cn";
 import en from "element-plus/lib/locale/lang/en";
+import { toggleClass } from "@pureadmin/utils";
 export default defineComponent({
   name: "app",
+  beforeCreate() {
+    toggleClass(true, "html-grey", document.querySelector("html"));
+  },
   components: {
     [ElConfigProvider.name]: ElConfigProvider
   },
